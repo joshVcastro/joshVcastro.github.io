@@ -1,0 +1,190 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+header img {
+  border-radius: 50%;
+  max-width: 150px;
+}
+
+h1 {
+  font-weight: 700;
+  color: #222;
+}
+
+p {
+  font-weight: 400;
+  color: #555;
+}
+
+nav {
+  background-color: #f8f8f8;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* Light mode styles */
+:root {
+  --primary-color: #007bff; /* Adjust the shade of blue to your preference */
+  --background-color: #f0f3f5;
+  --text-color: #333;
+  --header-bg-color: #fff;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] {
+  --primary-color: #0056b3; /* Darker shade for contrast */
+  --background-color: #343a40;
+  --text-color: #f8f9fa;
+  --header-bg-color: #212529;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] header {
+  background-color: var(--header-bg-color);
+}
+
+[data-theme="dark"] nav {
+  background-color: var(--background-color);
+}
+
+/* Add your additional styling here */
+
+/* Add these styles to your existing styles.css file */
+
+.portfolio-item {
+  margin: 1rem;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#profile-pic {
+  width: 150px; /* Adjust as necessary */
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+/* Add any additional styles for navigation, footer, etc. */
+
+/* Ensure the .portfolio-item class is defined like this in your styles.css file */
+
+#portfolio-section h2 {
+  text-align: center; /* Center the heading */
+  padding: 1rem 0; /* Provide some space above and below the heading */
+}
+
+/* Portfolio grid styles */
+#portfolio {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Start with 4 columns */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Make the grid responsive */
+@media (max-width: 1200px) {
+  #portfolio {
+    grid-template-columns: repeat(3, 1fr); /* Switch to 3 columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #portfolio {
+    grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns for small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #portfolio {
+    grid-template-columns: 1fr; /* 1 column for extra small screens */
+  }
+}
+
+.portfolio-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* Ensure that content does not spill outside the border */
+}
+
+.portfolio-item img {
+  width: 100%; /* Images will fill their container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Prevents inline spacing issues */
+}
+
+/* Rest of your existing portfolio-item and other styles should follow here. */
+
+/* The rest of your styles remain unchanged */
+
+/* The rest of your CSS */
+
+/* Parallax container */
+.parallax {
+  height: 150px; /* Adjust height as needed */
+  background-image: url('images/cover photo.jpg'); /* Make sure this path is correct */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Header content styling */
+.header-content {
+  position: relative; /* This positions the header content relative to the header */
+  z-index: 2; /* Ensures the content is above the parallax background */
+  text-align: center; /* Centers the content */
+  color: white; /* Adjust color based on your theme */
+}
+
+/* Adjusting the profile picture size and making it circular */
+#profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border: 3px solid white; /* Optional: Adds a border around the image */
+  margin-top: -75px; /* Adjusts the image to be partially above the parallax background */
+}
+
+/* Position the theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3; /* Ensures the button is above all other content */
+  /* Other button styling */
+}
+
+/* Additional styles... */
