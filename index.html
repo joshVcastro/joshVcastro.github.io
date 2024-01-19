@@ -9,51 +9,238 @@
 </head>
 <body>
 
+<!-- Parallax background container -->
+<div class="parallax"></div>
+
+<!-- Main header content -->
 <header id="main-header">
-  <div class="parallax"></div>
-  <div class="header-content">
-    <img src="images/Josh Castro Profile Picture.png" alt="Josh V Castro" id="profile-pic"> <!-- Update src with the correct path -->
-    <h1>Josh V Castro</h1>
-    <p>Content Creator, YouTube Manager, Storyteller</p>
-  </div>
-  <button onclick="toggleTheme()" class="theme-toggle">Toggle Light/Dark Mode</button>
+    <div class="header-content">
+        <img src="images/Josh Castro Profile Picture.png" alt="Josh V Castro" id="profile-pic">
+        <h1>Josh V Castro</h1>
+        <p>Content Creator, YouTube Manager, Storyteller</p>
+    </div>
+    <div class="theme-toggle-container">
+        <button id="theme-toggle-button">☀️</button>
+    </div>
+    <div class="search-container">
+        <input type="text" id="searchBar" onkeyup="searchPortfolio()" placeholder="Search portfolio items...">
+        <div id="tagDropdown" class="tag-dropdown">
+            <!-- Tags will be dynamically added here -->
+        </div>
+    </div>
 </header>
-
-
-<nav>
-  <!-- Navigation links will go here -->
-</nav>
 
 <main>
 	<section id="portfolio-section">
-		<h2>My Work</h2>
+		<!-- <h2>My Work</h2> -->
 		<div id="portfolio">
-			<!-- Portfolio items will go here -->
-			<div class="portfolio-item">
-				<img src="images/Embracing Love Beyond Goodbye 6 Messages from Our Departed Dogs.jpg" alt="Love Beyond Words">
-				<p>Heartwarming tales that remind us of the undying love and lessons our canine friends leave behind.</p>
-			</div>
-			<div class="portfolio-item">
-				<img src="images/Embracing Love Beyond Goodbye 6 Messages from Our Departed Dogs.jpg" alt="Love Beyond Words">
-				<p>Heartwarming tales that remind us of the undying love and lessons our canine friends leave behind.</p>
-			</div>
-			<div class="portfolio-item">
-				<img src="images/Embracing Love Beyond Goodbye 6 Messages from Our Departed Dogs.jpg" alt="Love Beyond Words">
-				<p>Heartwarming tales that remind us of the undying love and lessons our canine friends leave behind.</p>
-			</div>
-			<div class="portfolio-item">
-				<img src="images/Embracing Love Beyond Goodbye 6 Messages from Our Departed Dogs.jpg" alt="Love Beyond Words">
-				<p>Heartwarming tales that remind us of the undying love and lessons our canine friends leave behind.</p>
-			</div>
-			<div class="portfolio-item">
-				<img src="images/Embracing Love Beyond Goodbye 6 Messages from Our Departed Dogs.jpg" alt="Love Beyond Words">
-				<p>Heartwarming tales that remind us of the undying love and lessons our canine friends leave behind.</p>
-			</div>
-			<div class="portfolio-item">
-				<img src="images/Embracing Love Beyond Goodbye 6 Messages from Our Departed Dogs.jpg" alt="Love Beyond Words">
-				<p>Heartwarming tales that remind us of the undying love and lessons our canine friends leave behind.</p>
-			</div>
-			<!-- Repeat the above block for each portfolio item -->
+		<!-- Portfolio items will go here -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Video, Landscape, HeartFull, iHeartCats">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/KLujEQn3ruw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Toothless</h4>
+					<div class="portfolio-description">
+						<p>So Toothless here has a condition called Feline Dwarfism. She's a rescue & in this video we showcase that she found a wonderful family and is living the best life possible.</p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Video, Portrait, HeartFull, iHeartDogs">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/FyszkXBzxZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Walter, Winslow, Benji, & Roo!</h4>
+					<div class="portfolio-description">
+						<p>I enjoyed creating the story for this video. Gabi really shared her journey with these dogs and it truly was heartwarming I just had to showcase that in this video.</p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Video, Portrait, HeartFull, iHeartDogs">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/sYK_TEE5GEk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Zara & Gia!</h4>
+					<div class="portfolio-description">
+						<p>These were cute to edit, an awesome singing duo!</p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Video, Portrait, HeartFull, iHeartCats">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/gfBOwx0-PyM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Hermione!</h4>
+					<div class="portfolio-description">
+						<p>I remember this, she was rescued half way around the world!</p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Video, Portrait, HeartFull, iHeartCats">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/1lRoBygzkF0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Bunny & Otter!</h4>
+					<div class="portfolio-description">
+						<p>These cats had special needs. So I put more emphasis in showcasing that, at the same time showing people that even with special needs, they can thrive.</p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Video, Portrait, HeartFull, iHeartDogs">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/XNWrZ8bAqYU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Nessie!</h4>
+					<div class="portfolio-description">
+						<p>Nessie sings, and she can sing really well!</p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Video, Portrait, HeartFull, iHeartDogs">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/HzvADD_W8Wo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Hannah!</h4>
+					<div class="portfolio-description">
+						<p>To find the humor in circumstance just brings color to life. Even though Hannah has a condition, you can still clearly tell that she's living a good life.</p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Video, Landscape, HeartFull, iHeartDogs">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/OTEyqCf9MWo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Chupey!</h4>
+					<div class="portfolio-description">
+						<p>So I use a AI Voice over tool called ElevenLabs & they just couldn't pronounce Chupey that way it should sound, so in the script it was written as "Chupee"</p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Video, Landscape, HeartFull, iHeartCats">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/NQXUKBUHISo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet The McWhiskersons Clan!</h4>
+					<div class="portfolio-description">
+						<p>I clan of cats with similar disorders. Editing this made me grateful that there are caring people out there giving homes to cats with special needs. </p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Video, Portrait, HeartFull, iHeartCats">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/NxOuErck_mU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Happy Mew Year</h4>
+					<div class="portfolio-description">
+						<p>You think only humans celebrate New Year! Well cat's do to! This video was like around 80% AI. Just gave ChatGPT 4 the right prompts, then corrected the AI Voice over. Then I edited the rest in Canva.</p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Video, Landscape, HeartFull, iHeartCats">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/Yw5HF1MacFc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Princess Zara</h4>
+					<div class="portfolio-description">
+						<p>This cat is a survivor that's for sure. And I like how in this edit I used the background music to help add to the feel of the story. </p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Shorts, Portrait, HeartFull, iHeartCats">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/245LkqBLhVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Teresita!</h4>
+					<div class="portfolio-description">
+						<p>One of the videos where I created a what I call "border edge loading bar". As for Teresita, she has one ear d/t a tragic injury but she's doing good now.</p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Shorts, Portrait, HeartFull, iHeartDogs">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/qcdefYAcDyc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Winnie The Roo!</h4>
+					<div class="portfolio-description">
+						<p>This doggy! This was a fun edit because he's missing his front 2 limbs so he has to walk around like a human.</p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Shorts, Portrait, HeartFull, iHeartCats">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/PJNmJm9Celk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Ollie!</h4>
+					<div class="portfolio-description">
+						<p>No kid, this cat was rescued from a bears den! She has a cloudy eye and her other eye has been removed, so technically she's a blind cat. </p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Shorts, Portrait, HeartFull, iHeartDogs">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/UKLJFwIORq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Baker Barnes!</h4>
+					<div class="portfolio-description">
+						<p>This dog can dance! Enough said</p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Shorts, Portrait, HeartFull, iHeartDogs">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/bKBb3842wvQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Thunder & Otto!</h4>
+					<div class="portfolio-description">
+						<p>They also have a video version that I tookk inspiration from, the bg music they chose was just perfect. We couldn't use it d/t copyright reasons. </p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+				<!-- VIDEO -->
+				<div class="portfolio-item" data-tags=" ,YouTube, Shorts, Portrait, HeartFull, iHeartCats">
+					<div class="video-wrapper">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/ZUf52TstppA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+					<h4>Meet Liah and Luna!</h4>
+					<div class="portfolio-description">
+						<p>I remember them, chosing which photo/videos to use was tricky cause they had a lot of good ones on their IG Feed. </p>
+					</div>
+				</div>
+				<!-- /VIDEO -->
+
+		<!-- Repeat the above block for each portfolio item -->
 		</div>
 	</section>
 </main>
@@ -62,7 +249,6 @@
   <p>Contact me at: joshVcastro.com@gmail.com</p>
   <!-- Social media links will go here -->
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
