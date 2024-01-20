@@ -92,6 +92,29 @@ nav {
     font-size: 1.5em;
 }
 
+.theme-toggle-container {
+    text-align: center; /* Center the buttons on the page */
+    /* Other styling as needed */
+}
+
+#theme-toggle-button, .resume-button {
+    display: inline-block; /* Display inline */
+    margin-right: 10px; /* Space between buttons */
+    /* Other shared button/link styling */
+}
+
+.resume-button {
+    padding: 5px 10px; /* Adjust padding to match the toggle button size */
+    background-color: #ffffff; /* Button color */
+    color: black; /* Text color */
+    text-decoration: none; /* Removes underline from link */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.2s; /* Smooth transition for hover effect */
+}
+
+.resume-button:hover {
+    background-color: #a9a9a9; /* Darker shade on hover */
+}
 
 /* Header and Parallax Styles */
 /* ... existing styles ... */
