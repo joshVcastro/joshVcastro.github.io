@@ -1,4 +1,5 @@
-document.getElementById('theme-toggle-button').addEventListener('click', function() {
+// Toggle theme between light and dark mode
+document.getElementById('theme-toggle-button').addEventListener('click', function () {
     var currentTheme = document.body.dataset.theme;
     if (currentTheme === 'dark') {
         document.body.dataset.theme = '';
@@ -7,102 +8,72 @@ document.getElementById('theme-toggle-button').addEventListener('click', functio
         document.body.dataset.theme = 'dark';
         this.textContent = '🌙'; // Moon emoji for night mode
     }
+});
 
+// Filter portfolio items by tags
 function filterPortfolio(tag) {
-  var items = document.getElementsByClassName('portfolio-item');
-  for (var i = 0; i < items.length; i++) {
-    var itemTags = items[i].dataset.tags || "";
-    if (itemTags.split(',').includes(tag) || tag === 'all') {
-      items[i].style.display = '';
-    } else {
-      items[i].style.display = 'none';
+    var items = document.getElementsByClassName('portfolio-item');
+    for (var i = 0; i < items.length; i++) {
+        var itemTags = items[i].dataset.tags || "";
+        if (itemTags.split(',').includes(tag) || tag === 'all') {
+            items[i].style.display = '';
+        } else {
+            items[i].style.display = 'none';
+        }
     }
-  }
 }
 
+// Search portfolio items
 function searchPortfolio() {
-  var input, filter, items, i, itemTitle, itemTags, titleElement;
-  input = document.getElementById('searchBar');
-  filter = input.value.toUpperCase();
-  items = document.getElementsByClassName('portfolio-item');
+    var input, filter, items, i, itemTitle, itemTags, titleElement;
+    input = document.getElementById('searchBar');
+    filter = input.value.toUpperCase();
+    items = document.getElementsByClassName('portfolio-item');
 
-  for (i = 0; i < items.length; i++) {
-    titleElement = items[i].getElementsByTagName('h4')[0];
-    itemTitle = titleElement ? titleElement.textContent.toUpperCase() : "";
-    itemTags = (items[i].dataset.tags || "").toUpperCase();
-    
-    if (itemTitle.indexOf(filter) > -1 || itemTags.indexOf(filter) > -1) {
-      items[i].style.display = '';
-    } else {
-      items[i].style.display = 'none';
+    for (i = 0; i < items.length; i++) {
+        titleElement = items[i].getElementsByTagName('h4')[0];
+        itemTitle = titleElement ? titleElement.textContent.toUpperCase() : "";
+        itemTags = (items[i].dataset.tags || "").toUpperCase();
+
+        if (itemTitle.indexOf(filter) > -1 || itemTags.indexOf(filter) > -1) {
+            items[i].style.display = '';
+        } else {
+            items[i].style.display = 'none';
+        }
     }
-  }
 }
 
-
-
-document.addEventListener('DOMContentLoaded', function() {
+// Populate dropdown with tags
+function populateDropdown() {
     var items = document.getElementsByClassName('portfolio-item');
     var dropdown = document.getElementById('tagDropdown');
+    dropdown.innerHTML = ''; // Clear existing tags
     var tags = new Set();
 
     for (var i = 0; i < items.length; i++) {
         var itemTags = items[i].dataset.tags.split(',');
-        itemTags.forEach(function(tag) {
+        itemTags.forEach(function (tag) {
             tags.add(tag.trim());
         });
     }
 
-	// Inside populateDropdown function
-
-	tags.forEach(function(tag) {
-		var div = document.createElement('div');
-		div.textContent = tag;
-		div.className = 'dropdown-tag';
-		div.onclick = function() {
-			document.getElementById('searchBar').value = tag; // Populate the search bar
-			searchPortfolio(); // Trigger the search
-			// Do not change the display property here
-		};
-		dropdown.appendChild(div);
-	});
-	
-
-});
-
-// ...previous code for dropdown population...
-
-tags.forEach(function(tag) {
-    var div = document.createElement('div');
-    div.textContent = tag;
-    div.className = 'dropdown-tag';
-    div.onclick = function() {
-        searchPortfolio(tag); // Pass the tag to the search function
-    };
-    dropdown.appendChild(div);
-});
-
-// ...rest of the code...
-
-
-function populateDropdown() {
-    var dropdown = document.getElementById('tagDropdown');
-    dropdown.innerHTML = ''; // Clear existing tags
-    // ... rest of the code to populate the dropdown ...
+    tags.forEach(function (tag) {
+        var div = document.createElement('div');
+        div.textContent = tag;
+        div.className = 'dropdown-tag';
+        div.onclick = function () {
+            document.getElementById('searchBar').value = tag; // Populate the search bar
+            searchPortfolio(); // Trigger the search
+        };
+        dropdown.appendChild(div);
+    });
 }
 
-// Call populateDropdown initially and after each search
-document.addEventListener('DOMContentLoaded', populateDropdown);
+// Full-screen image functionality
+document.addEventListener('DOMContentLoaded', function () {
+    populateDropdown(); // Populate dropdown on page load
 
-// Modify the tag onclick function
-div.onclick = function() {
-    document.getElementById('searchBar').value = tag;
-    searchPortfolio();
-    populateDropdown(); // Repopulate the dropdown
-};
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all images with the class 'fullscreen-img'
+    // Full-screen image code
     var images = document.querySelectorAll('.fullscreen-img');
     var overlay = document.createElement('div');
     overlay.id = 'fullscreen-overlay';
@@ -112,17 +83,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var fullscreenImage = document.getElementById('fullscreen-image');
     var closeButton = document.getElementById('close-btn');
 
-    // Add click event to each image
-    images.forEach(function(image) {
-        image.addEventListener('click', function() {
+    images.forEach(function (image) {
+        image.addEventListener('click', function () {
             fullscreenImage.src = this.src; // Set the clicked image as the source for full-screen view
             overlay.style.display = 'flex'; // Show overlay
         });
     });
 
-    // Add click event to close button
-    closeButton.addEventListener('click', function() {
+    closeButton.addEventListener('click', function () {
         overlay.style.display = 'none'; // Hide overlay
     });
 });
-
