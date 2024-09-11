@@ -17,15 +17,15 @@ header {
     transition: color 0.3s; /* Smooth transition for color change */
 }
 
-/* Hamburger Menu Styles */
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 10px;
-    position: relative;
-}
-
+	/* Hamburger Menu Styles */
+	.navbar {
+	    display: flex;
+	    justify-content: flex-end;
+	    align-items: center;
+	    padding: 10px;
+	    position: relative;
+	}
+	
 	.hamburger-menu {
 	    cursor: pointer;
 	    display: flex;
@@ -68,7 +68,6 @@ header {
 	.nav-active {
 	    display: flex;
 	}
-
 
 header img {
     border-radius: 50%;
