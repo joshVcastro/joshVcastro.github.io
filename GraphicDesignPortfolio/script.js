@@ -42,11 +42,6 @@ function searchPortfolio() {
     }
 }
 
-
-
-
-
-
 // Populate dropdown with tags and manage dropdown hover feature
 document.addEventListener('DOMContentLoaded', function () {
     var items = document.getElementsByClassName('portfolio-item');
@@ -91,27 +86,27 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('DOMContentLoaded', populateDropdown);
 });
 
-
-
-
-
-
-
-// Full-screen image functionality
+// Full-screen image and video functionality
 document.addEventListener('DOMContentLoaded', function () {
-    // Create the overlay for full-screen images
+    // Create the overlay for full-screen images and videos
     var overlay = document.createElement('div');
     overlay.id = 'fullscreen-overlay';
-    overlay.innerHTML = '<span id="close-btn">✖</span><img id="fullscreen-image" src="">';
+    overlay.innerHTML = '<span id="close-btn">✖</span><iframe id="fullscreen-iframe" src="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
     document.body.appendChild(overlay);
 
-    var fullscreenImage = document.getElementById('fullscreen-image');
+    var fullscreenIframe = document.getElementById('fullscreen-iframe');
     var closeButton = document.getElementById('close-btn');
 
-    // Add click event to images
-    document.querySelectorAll('.fullscreen-img').forEach(function (image) {
-        image.addEventListener('click', function () {
-            fullscreenImage.src = this.src; // Set the clicked image as the source for full-screen view
+    // Add click event to images and videos
+    document.querySelectorAll('.fullscreen-img').forEach(function (element) {
+        element.addEventListener('click', function () {
+            if (element.tagName === 'IFRAME') {
+                fullscreenIframe.src = this.src; // Set the clicked iframe's source for full-screen view
+            } else {
+                fullscreenIframe.src = ''; // Clear iframe src if it's not an iframe
+                fullscreenIframe.style.display = 'none'; // Hide iframe
+                overlay.innerHTML = '<span id="close-btn">✖</span><img id="fullscreen-image" src="' + this.src + '">';
+            }
             overlay.style.display = 'flex'; // Show overlay
         });
     });
@@ -119,12 +114,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add click event to close button
     closeButton.addEventListener('click', function () {
         overlay.style.display = 'none'; // Hide overlay
+        fullscreenIframe.src = ''; // Clear the iframe source when closing
     });
 
     // Add event listener for 'ESC' key press
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
             overlay.style.display = 'none'; // Hide overlay when ESC is pressed
+            fullscreenIframe.src = ''; // Clear the iframe source when exiting
         }
     });
 });
