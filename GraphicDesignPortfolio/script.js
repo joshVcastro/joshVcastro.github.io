@@ -44,30 +44,65 @@ function searchPortfolio() {
 }
 
 // Populate dropdown with tags
-function populateDropdown() {
+document.addEventListener('DOMContentLoaded', function() {
     var items = document.getElementsByClassName('portfolio-item');
     var dropdown = document.getElementById('tagDropdown');
-    dropdown.innerHTML = ''; // Clear existing tags
     var tags = new Set();
 
     for (var i = 0; i < items.length; i++) {
         var itemTags = items[i].dataset.tags.split(',');
-        itemTags.forEach(function (tag) {
+        itemTags.forEach(function(tag) {
             tags.add(tag.trim());
         });
     }
 
-    tags.forEach(function (tag) {
-        var div = document.createElement('div');
-        div.textContent = tag;
-        div.className = 'dropdown-tag';
-        div.onclick = function () {
-            document.getElementById('searchBar').value = tag; // Populate the search bar
-            searchPortfolio(); // Trigger the search
-        };
-        dropdown.appendChild(div);
-    });
+	// Inside populateDropdown function
+
+	tags.forEach(function(tag) {
+		var div = document.createElement('div');
+		div.textContent = tag;
+		div.className = 'dropdown-tag';
+		div.onclick = function() {
+			document.getElementById('searchBar').value = tag; // Populate the search bar
+			searchPortfolio(); // Trigger the search
+			// Do not change the display property here
+		};
+		dropdown.appendChild(div);
+	});
+	
+
+});
+
+// ...previous code for dropdown population...
+
+tags.forEach(function(tag) {
+    var div = document.createElement('div');
+    div.textContent = tag;
+    div.className = 'dropdown-tag';
+    div.onclick = function() {
+        searchPortfolio(tag); // Pass the tag to the search function
+    };
+    dropdown.appendChild(div);
+});
+
+// ...rest of the code...
+
+
+function populateDropdown() {
+    var dropdown = document.getElementById('tagDropdown');
+    dropdown.innerHTML = ''; // Clear existing tags
+    // ... rest of the code to populate the dropdown ...
 }
+
+// Call populateDropdown initially and after each search
+document.addEventListener('DOMContentLoaded', populateDropdown);
+
+// Modify the tag onclick function
+div.onclick = function() {
+    document.getElementById('searchBar').value = tag;
+    searchPortfolio();
+    populateDropdown(); // Repopulate the dropdown
+};
 
 // Full-screen image functionality
 document.addEventListener('DOMContentLoaded', function() {
