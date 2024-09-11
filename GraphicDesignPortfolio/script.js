@@ -7,16 +7,6 @@ document.getElementById('theme-toggle-button').addEventListener('click', functio
         document.body.dataset.theme = 'dark';
         this.textContent = '🌙'; // Moon emoji for night mode
     }
-});
-
-document.getElementById('hamburger-menu').addEventListener('click', function () {
-    document.getElementById('nav-links').classList.toggle('nav-active');
-});
-
-// Hamburger Menu Toggle
-document.getElementById('hamburger-menu').addEventListener('click', function () {
-    document.getElementById('nav-links').classList.toggle('nav-active');
-});
 
 function filterPortfolio(tag) {
   var items = document.getElementsByClassName('portfolio-item');
