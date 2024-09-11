@@ -13,6 +13,11 @@ document.getElementById('hamburger-menu').addEventListener('click', function () 
     document.getElementById('nav-links').classList.toggle('nav-active');
 });
 
+// Hamburger Menu Toggle
+document.getElementById('hamburger-menu').addEventListener('click', function () {
+    document.getElementById('nav-links').classList.toggle('nav-active');
+});
+
 function filterPortfolio(tag) {
   var items = document.getElementsByClassName('portfolio-item');
   for (var i = 0; i < items.length; i++) {
