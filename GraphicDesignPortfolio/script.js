@@ -101,4 +101,28 @@ div.onclick = function() {
     populateDropdown(); // Repopulate the dropdown
 };
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all images with the class 'fullscreen-img'
+    var images = document.querySelectorAll('.fullscreen-img');
+    var overlay = document.createElement('div');
+    overlay.id = 'fullscreen-overlay';
+    overlay.innerHTML = '<span id="close-btn">✖</span><img id="fullscreen-image" src="">';
+    document.body.appendChild(overlay);
+
+    var fullscreenImage = document.getElementById('fullscreen-image');
+    var closeButton = document.getElementById('close-btn');
+
+    // Add click event to each image
+    images.forEach(function(image) {
+        image.addEventListener('click', function() {
+            fullscreenImage.src = this.src; // Set the clicked image as the source for full-screen view
+            overlay.style.display = 'flex'; // Show overlay
+        });
+    });
+
+    // Add click event to close button
+    closeButton.addEventListener('click', function() {
+        overlay.style.display = 'none'; // Hide overlay
+    });
+});
 
