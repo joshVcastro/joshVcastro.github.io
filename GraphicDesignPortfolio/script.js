@@ -60,12 +60,11 @@ document.addEventListener('DOMContentLoaded', function () {
         var div = document.createElement('div');
         div.textContent = tag;
         div.className = 'dropdown-tag';
-        div.onclick = function () {
-            document.getElementById('searchBar').value = tag; // Populate the search bar
-            searchPortfolio(); // Trigger the search
-        };
-        dropdown.appendChild(div);
-    });
+        div.onclick = function() {
+        searchPortfolio(tag); // Pass the tag to the search function
+    };
+    dropdown.appendChild(div);
+});
 
     // Populate dropdown after each search
     populateDropdown();
@@ -77,6 +76,12 @@ function populateDropdown() {
     dropdown.innerHTML = ''; // Clear existing tags
     document.querySelectorAll('.dropdown-tag').forEach(tag => dropdown.appendChild(tag));
 }
+
+div.onclick = function() {
+    document.getElementById('searchBar').value = tag;
+    searchPortfolio();
+    populateDropdown(); // Repopulate the dropdown
+};
 
 // Full-screen image functionality
 document.addEventListener('DOMContentLoaded', function () {
