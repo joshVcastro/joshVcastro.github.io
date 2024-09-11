@@ -9,6 +9,14 @@ document.getElementById('theme-toggle-button').addEventListener('click', functio
     }
 });
 
+function toggleMenu() {
+    const menu = document.getElementById("menuLinks");
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
 
 function filterPortfolio(tag) {
   var items = document.getElementsByClassName('portfolio-item');
@@ -102,3 +110,5 @@ div.onclick = function() {
     searchPortfolio();
     populateDropdown(); // Repopulate the dropdown
 };
+
+
