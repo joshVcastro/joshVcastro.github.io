@@ -90,3 +90,41 @@ document.addEventListener('DOMContentLoaded', function () {
     // Call populateDropdown initially and after each search
     document.addEventListener('DOMContentLoaded', populateDropdown);
 });
+
+
+
+
+
+
+
+// Full-screen image functionality
+document.addEventListener('DOMContentLoaded', function () {
+    // Create the overlay for full-screen images
+    var overlay = document.createElement('div');
+    overlay.id = 'fullscreen-overlay';
+    overlay.innerHTML = '<span id="close-btn">✖</span><img id="fullscreen-image" src="">';
+    document.body.appendChild(overlay);
+
+    var fullscreenImage = document.getElementById('fullscreen-image');
+    var closeButton = document.getElementById('close-btn');
+
+    // Add click event to images
+    document.querySelectorAll('.fullscreen-img').forEach(function (image) {
+        image.addEventListener('click', function () {
+            fullscreenImage.src = this.src; // Set the clicked image as the source for full-screen view
+            overlay.style.display = 'flex'; // Show overlay
+        });
+    });
+
+    // Add click event to close button
+    closeButton.addEventListener('click', function () {
+        overlay.style.display = 'none'; // Hide overlay
+    });
+
+    // Add event listener for 'ESC' key press
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            overlay.style.display = 'none'; // Hide overlay when ESC is pressed
+        }
+    });
+});
