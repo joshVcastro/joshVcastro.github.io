@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Add dropdown tags dynamically
     tags.forEach(function (tag) {
         var div = document.createElement('div');
         div.textContent = tag;
@@ -66,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dropdown.appendChild(div);
     });
 
-    // Call populateDropdown after each search
+    // Populate dropdown after each search
     populateDropdown();
 });
 
@@ -74,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
 function populateDropdown() {
     var dropdown = document.getElementById('tagDropdown');
     dropdown.innerHTML = ''; // Clear existing tags
-    // Populate dropdown with current tags again
     document.querySelectorAll('.dropdown-tag').forEach(tag => dropdown.appendChild(tag));
 }
 
