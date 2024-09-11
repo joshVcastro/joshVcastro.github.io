@@ -17,6 +17,7 @@ header {
     transition: color 0.3s; /* Smooth transition for color change */
 }
 
+
 header img {
     border-radius: 50%;
     max-width: 150px;
@@ -64,6 +65,8 @@ nav {
   margin-top: -75px; /* Adjusts the image to be partially above the parallax background */
 }
 
+/* ...rest of your styles... */
+
 /* Default theme (day mode) */
 :root {
     --background-color: #ffffff; /* Light background */
@@ -79,6 +82,7 @@ nav {
     --header-text-color: #FAFAFA; /* Light text for header in night mode */
     --separator-color: #1a1a2e; /* Subtle dark blue for separator in night mode */
 }
+
 
 /* Style for the toggle button */
 #theme-toggle-button {
@@ -116,6 +120,7 @@ nav {
 /* ... existing styles ... */
 
 /* Search bar container */
+
 .search-container {
     position: relative;
     width: 40%; 
@@ -147,53 +152,191 @@ nav {
 
 .tag-dropdown {
     display: none;
+    /* ... other styles ... */
 }
 
 .dropdown-tag {
     padding: 5px 10px;
     cursor: pointer;
     text-align: left;
-    color: #000000; /* Set the text color to black */
+	color: #000000; /* Set the text color to black */
+    /* ... other existing styles ... */
 }
 
 .dropdown-tag:hover {
     background-color: #ddd; /* Change as needed */
 }
 
-/* Portfolio item styles */
+/* Add these styles to your existing styles.css file */
+
 .portfolio-item {
+    /* Your existing styles for portfolio items */
     position: relative; /* Needed for absolute positioning of the description */
-    overflow: hidden;
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for the hover effect */
+	
+	/* Your existing styles for portfolio items */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* Optional: Add a slight transition for transform to give a 'lift' effect */
+}
+
+.portfolio-item h4 {
+    /* Your existing styles for h4 titles */
+    padding-left: 10px; /* Adjust as needed */
+    padding-right: 10px; /* Adjust as needed */
 }
 
 .portfolio-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adjust the shadow to your liking */
     transform: translateY(-5px); /* Optional: Slightly lift the item */
 }
 
-.portfolio-item img,
-.portfolio-item iframe {
-    width: 100%; /* Make the media fill the container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Prevents inline spacing issues */
+.portfolio-item .portfolio-description,
+.portfolio-item .portfolio-description p { /* Targeting <p> tags specifically */
+    color: #000000; /* Ensure text color is black */
+    /* ... other existing styles ... */
 }
 
-/* Hover description adjustment for the left side */
+
 .portfolio-description {
     position: absolute;
-    top: 0;
-    left: -100%; /* Start off-screen to the left */
-    width: 100%;
-    height: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-color: rgba(255, 255, 255, 0.9); /* Adjust the background as needed */
-    padding: 10px; /* Adds padding around the description */
-    color: #000000; /* Text color */
-    transition: left 0.3s ease; /* Smooth transition for sliding in from the left */
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s ease;
+	
+	/* Your existing styles for descriptions */
+    padding: 10px; /* Adds padding all around the description */
+    /* ... other existing styles ... */
+	color: #000000; /* Set the text color to black */
+    /* ... other existing styles ... */
 }
 
 .portfolio-item:hover .portfolio-description {
-    left: 0; /* Bring the description into view from the left */
+    height: 100px; /* Adjust as needed for the height of the description */
+}
+
+
+#profile-pic {
+  width: 150px; /* Adjust as necessary */
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+/* Add any additional styles for navigation, footer, etc. */
+
+/* Ensure the .portfolio-item class is defined like this in your styles.css file */
+
+#portfolio-section h2 {
+  text-align: center; /* Center the heading */
+  padding: 1rem 0; /* Provide some space above and below the heading */
+}
+
+/* Portfolio grid styles */
+#portfolio {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Start with 4 columns */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Make the grid responsive */
+@media (max-width: 1200px) {
+  #portfolio {
+    grid-template-columns: repeat(3, 1fr); /* Switch to 3 columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #portfolio {
+    grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns for small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #portfolio {
+    grid-template-columns: 1fr; /* 1 column for extra small screens */
+  }
+}
+
+.portfolio-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* Ensure that content does not spill outside the border */
+}
+
+.portfolio-item img {
+  width: 100%; /* Images will fill their container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Prevents inline spacing issues */
+}
+
+/* Rest of your existing portfolio-item and other styles should follow here. */
+
+/* The rest of your styles remain unchanged */
+
+/* The rest of your CSS */
+
+/* Position the theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3; /* Ensures the button is above all other content */
+  /* Other button styling */
+}
+
+/* Additional styles... */
+.portfolio-link {
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Keeps text color consistent with the rest of your design */
+}
+
+.portfolio-link:hover .portfolio-item {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Example hover effect */
+  /* You can add other hover effects like a change in scale, border, etc. */
+}
+
+.portfolio-item iframe {
+  max-width: 100%; /* Ensures the video is responsive */
+  height: auto; /* Adjust height as necessary, or it can be responsive based on the width */
+  border-radius: 8px; /* Optional: rounds the corners */
+}
+
+.video-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-item h4 {
+  text-align: left;
+  margin-top: 10px;
+  /* Additional styling for the title */
 }
 
 /* Fullscreen overlay styling */
@@ -225,57 +368,3 @@ nav {
     cursor: pointer;
     z-index: 1000; /* Make sure it is above other elements */
 }
-
-/* Portfolio grid styles */
-#portfolio {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Start with 4 columns */
-  gap: 1rem;
-  padding: 1rem;
-}
-
-/* Make the grid responsive */
-@media (max-width: 1200px) {
-  #portfolio {
-    grid-template-columns: repeat(3, 1fr); /* Switch to 3 columns for medium screens */
-  }
-}
-
-@media (max-width: 768px) {
-  #portfolio {
-    grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns for small screens */
-  }
-}
-
-@media (max-width: 480px) {
-  #portfolio {
-    grid-template-columns: 1fr; /* 1 column for extra small screens */
-  }
-}
-
-.portfolio-item h4 {
-  text-align: left;
-  margin-top: 10px;
-  /* Additional styling for the title */
-}
-
-button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: var(--primary-color);
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: darken(var(--primary-color), 10%);
-}
-
-/* Position the theme toggle button */
-.theme-toggle {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 3; /* Ens
