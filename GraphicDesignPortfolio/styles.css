@@ -17,6 +17,7 @@ header {
     transition: color 0.3s; /* Smooth transition for color change */
 }
 
+
 header img {
     border-radius: 50%;
     max-width: 150px;
