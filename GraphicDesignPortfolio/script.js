@@ -70,10 +70,8 @@ function populateDropdown() {
 }
 
 // Full-screen image functionality
-document.addEventListener('DOMContentLoaded', function () {
-    populateDropdown(); // Populate dropdown on page load
-
-    // Full-screen image code
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all images with the class 'fullscreen-img'
     var images = document.querySelectorAll('.fullscreen-img');
     var overlay = document.createElement('div');
     overlay.id = 'fullscreen-overlay';
@@ -83,14 +81,25 @@ document.addEventListener('DOMContentLoaded', function () {
     var fullscreenImage = document.getElementById('fullscreen-image');
     var closeButton = document.getElementById('close-btn');
 
-    images.forEach(function (image) {
-        image.addEventListener('click', function () {
+    // Add click event to each image
+    images.forEach(function(image) {
+        image.addEventListener('click', function() {
             fullscreenImage.src = this.src; // Set the clicked image as the source for full-screen view
             overlay.style.display = 'flex'; // Show overlay
         });
     });
 
-    closeButton.addEventListener('click', function () {
+    // Add click event to close button
+    closeButton.addEventListener('click', function() {
         overlay.style.display = 'none'; // Hide overlay
     });
+
+    // Add event listener for 'ESC' key press
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            overlay.style.display = 'none'; // Hide overlay when ESC is pressed
+        }
+    });
 });
+
+
